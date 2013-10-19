@@ -29,5 +29,41 @@ public class ShapeFactoryTest extends BaseUnitTest {
     public void getShape_returnsCircleTypeAsExpected() throws InvalidShapeException {
         Shape circle = shapeFactory.getShape(ShapeType.CIRCLE);
         Assert.assertEquals("Inside Circle::draw() method.", circle.draw());
+        Assert.assertEquals("com.fs.creational.factoryPattern.Circle", circle.getClass().getName());
+    }
+
+    @Test
+    public void getShape_returnsRectangleTypeAsExpected() throws InvalidShapeException {
+        Shape rectangle = shapeFactory.getShape(ShapeType.RECTANGLE);
+        Assert.assertEquals("Inside Rectangle::draw() method.", rectangle.draw());
+        Assert.assertEquals("com.fs.creational.factoryPattern.Rectangle", rectangle.getClass().getName());
+    }
+
+    @Test
+    public void getShape_returnsSquareTypeAsExpected() throws InvalidShapeException {
+        Shape square = shapeFactory.getShape(ShapeType.SQUARE);
+        Assert.assertEquals("Inside Square::draw() method.", square.draw());
+        Assert.assertEquals("com.fs.creational.factoryPattern.Square", square.getClass().getName());
+    }
+
+    @Test
+    public void abstraction_worksAsExpected() throws InvalidShapeException {
+        //get an object of Circle and call its draw method.
+        Shape shape = shapeFactory.getShape(ShapeType.CIRCLE);
+
+        //call draw method of Circle
+        Assert.assertEquals("Inside Circle::draw() method.", shape.draw());
+
+        //get an object of Rectangle and call its draw method.
+        shape = shapeFactory.getShape(ShapeType.RECTANGLE);
+
+        //call draw method of Rectangle
+        Assert.assertEquals("Inside Rectangle::draw() method.", shape.draw());
+
+        //get an object of Square and call its draw method.
+        shape = shapeFactory.getShape(ShapeType.SQUARE);
+
+        //call draw method of circle
+        Assert.assertEquals("Inside Square::draw() method.", shape.draw());
     }
 }
