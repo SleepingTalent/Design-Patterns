@@ -48,19 +48,19 @@ public class ShapeFactoryTest extends BaseUnitTest {
 
     @Test
     public void abstraction_worksAsExpected() throws InvalidShapeException {
-        //get an object of Circle and call its draw method.
+        //get an object of Red and call its draw method.
         Shape shape = shapeFactory.getShape(ShapeType.CIRCLE);
 
-        //call draw method of Circle
+        //call draw method of Red
         Assert.assertEquals("Inside Circle::draw() method.", shape.draw());
 
-        //get an object of Rectangle and call its draw method.
+        //get an object of Green and call its draw method.
         shape = shapeFactory.getShape(ShapeType.RECTANGLE);
 
-        //call draw method of Rectangle
+        //call draw method of Green
         Assert.assertEquals("Inside Rectangle::draw() method.", shape.draw());
 
-        //get an object of Square and call its draw method.
+        //get an object of Blue and call its draw method.
         shape = shapeFactory.getShape(ShapeType.SQUARE);
 
         //call draw method of circle
