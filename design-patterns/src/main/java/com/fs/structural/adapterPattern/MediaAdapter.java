@@ -8,7 +8,6 @@ public class MediaAdapter implements MediaPlayer {
 
     AdvancedMediaPlayer advancedMusicPlayer;
 
-
     public MediaAdapter(MediaHandler mediaHandler) {
         this.mediaHandler = mediaHandler;
     }
