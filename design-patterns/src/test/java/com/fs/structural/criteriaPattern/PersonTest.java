@@ -2,6 +2,7 @@ package com.fs.structural.criteriaPattern;
 
 import com.fs.common.BaseUnitTest;
 import com.fs.structural.criteriaPattern.criteria.*;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -43,30 +44,25 @@ public class PersonTest extends BaseUnitTest {
 
     @Test
     public void find_males_returnsExpectedPeople() {
-          printPersons(male.meetCriteria(persons));
+        List<Person> actual = male.meetCriteria(persons);
+        Assert.assertEquals(4, actual.size());
     }
 
     @Test
     public void find_females_returnsExpectedPeople() {
-        printPersons(female.meetCriteria(persons));
+        List<Person> actual = female.meetCriteria(persons);
+        Assert.assertEquals(2, actual.size());
     }
 
     @Test
     public void find_singlemales_returnsExpectedPeople() {
-        printPersons(singleMale.meetCriteria(persons));
+        List<Person> actual = singleMale.meetCriteria(persons);
+        Assert.assertEquals(3, actual.size());
     }
 
     @Test
     public void find_singleOrfemale_returnsExpectedPeople() {
-        printPersons(singleOrFemale.meetCriteria(persons));
-    }
-
-    private void printPersons(List<Person> persons){
-        for (Person person : persons) {
-            System.out.println("Person : [ Name : " + person.getName()
-                    +", Gender : " + person.getGender()
-                    +", Marital Status : " + person.getMaritalStatus()
-                    +" ]");
-        }
+        List<Person> actual = singleOrFemale.meetCriteria(persons);
+        Assert.assertEquals(5, actual.size());
     }
 }
